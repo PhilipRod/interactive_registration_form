@@ -1,5 +1,4 @@
-
-// VARIABLES
+ // VARIABLES
 const nameInput = document.getElementById('name');
 const title = document.getElementById('title');
 const otherJob = document.getElementById('other-job-role');
@@ -200,6 +199,20 @@ function validatCvv(num) {
     }
 }
 
+//EVENT LISTENER TO LISTEN FOR ACTIVITIES FOCUS STATE
+checkboxes.forEach(checkbox=>{
+    checkbox.addEventListener('focus',e=>{
+        checkbox.parentElement.classList.add('focus')
+    })
+    
+    checkbox.addEventListener('blur',e=>{
+        checkbox.parentElement.classList.remove('focus')
+    })
+})
+
+
+
+
 //EVENT LISTENER TO LISTEN FOR FORM SUBMISSION  
 form.addEventListener('submit', event => {
     const validName = validateName(nameInput.value);
@@ -236,4 +249,3 @@ form.addEventListener('submit', event => {
         })
     }
 })
-
